@@ -2,15 +2,17 @@ import java.util.NoSuchElementException;
 public class Range implements IntegerSequence{
   private int start,end,current;
   public Range(int start,  int end){
-    if (start <= end){
+      if (start <= end){
       this.start = start;
       this.end = end;
       current = start;
+      }else{
+      throw new IllegalArgumentException("Start is not <= End");
     }
   }
 
   public void reset(){
-    current = 0;
+    current = start;
   }
 
   public int length(){
@@ -18,16 +20,15 @@ public class Range implements IntegerSequence{
   }
 
   public boolean hasNext(){
-    return current < end;
+    return current <= end;
   }
 
-  public int next() throws NoSuchElementException{
-      try{
-      hasNext();
+  public int next(){
+    if (hasNext()){
+      current++;
+      return current-1;
+    }else{
+      throw new NoSuchElementException("test");
     }
-    catch (NoSuchElementException e){
-    }
-    current++;
-    return current-1;
   }
 }
