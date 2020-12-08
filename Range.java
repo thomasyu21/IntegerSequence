@@ -28,7 +28,7 @@ public class Range implements IntegerSequence{
       current++;
       return current-1;
     }else{
-      throw new NoSuchElementException("test");
+      throw new NoSuchElementException("No more values in sequence");
     }
   }
 }
