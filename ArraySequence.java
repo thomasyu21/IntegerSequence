@@ -12,6 +12,7 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public ArraySequence(IntegerSequence otherseq){
+    otherseq.reset();
     data = new int[otherseq.length()];
     for (int i = 0; i < otherseq.length(); i++){
       data[i] = otherseq.next();

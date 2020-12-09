@@ -32,5 +32,44 @@ public class Tester{
     System.out.println();
     String test = "10, 11, 12, 13, 14, 15";
     System.out.println(test);
+
+    int[]nums = {1,3,5,0,-1,3,9};
+    IntegerSequence as = new ArraySequence(nums);
+    System.out.println(as.length());
+
+    System.out.println("ArraySequence(array):");
+    while(as.hasNext()){
+      System.out.print(as.next()+", ");
+    }
+    System.out.println();
+
+    int[]nums2 = {};
+    IntegerSequence test1 = new ArraySequence(nums2);
+    System.out.println(test1.length());
+
+    System.out.println("ArraySequence(array):");
+    while(as.hasNext()){
+      System.out.print(as.next()+", ");
+    }
+    System.out.println();
+
+    IntegerSequence r = new Range(10,20);
+    System.out.println(r.length());
+    IntegerSequence as1 = new ArraySequence(r);
+    System.out.println(as1.length());
+
+    System.out.println("ArraySequence(seq):");
+    while(as1.hasNext()){
+      System.out.print(as1.next()+", ");
+    }
+    System.out.println();
+
+    IntegerSequence as2 = new ArraySequence(b);
+    System.out.println(as2.length());
+    System.out.println("ArraySequence(seq):");
+    while(as2.hasNext()){
+      System.out.print(as2.next()+", ");
+    }
+    System.out.println();
   }
 }
